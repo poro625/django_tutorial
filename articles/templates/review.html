@@ -1,0 +1,12 @@
+<!--articles/urls.py에서 8번째줄에 name='creative_review'로 지정했기때문에 action="creative_review" {% url 'creative_review' %}로 바꿔줬다   -->
+<!--{% url 'artecles:creative_review' %} 이부분에서 artecles:은 urls.py에서 4번째 줄에서
+     app_name = 'articles'로 지정하였다 이것을 사용한 이유는 여러개의 앱을 생성하였을경우 혼선을 방지 하기 위해 지정한것이다  -->
+
+     
+<form action="{% url 'artecles:creative_review' %}" method="POST"> 
+{% csrf_token %}
+<label for="content">보낼 메세지</label>
+<input type="text" id="content" name="content" />
+<input type="submit" />
+
+</form>
